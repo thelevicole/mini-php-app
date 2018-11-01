@@ -25,14 +25,14 @@ The [AltoRouter]((http://altorouter.com/) package is used to handle all applicat
 
 You can handle the request by calling a function directly, for example:
 ```php
-	$router->map('GET', '/users/[i:id]', function($id) {
-		// Do something with $id
-	});
+$router->map('GET', '/users/[i:id]', function($id) {
+	// Do something with $id
+});
 ```
 
 Or you can use a controller method:
 ```php
-	$router->map('GET', '/users/[i:id]', 'ControllerName@method_name');
+$router->map('GET', '/users/[i:id]', 'ControllerName@method_name');
 ```
 
 ## View helper function
