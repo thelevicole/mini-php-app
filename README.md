@@ -42,10 +42,10 @@ view('admin.profile', [ 'name' => 'John Doe' ])
 ## PHP constants
 
 ```php
-	$root	= ROOT_DIR;		# /
-	$public	= PUBLIC_DIR;	# /public
-	$app	= APP_DIR;		# /app
-	$views	= VIEW_DIR;		# /app/views
+$root	= ROOT_DIR;		# /
+$public	= PUBLIC_DIR;	# /public
+$app	= APP_DIR;		# /app
+$views	= VIEW_DIR;		# /app/views
 ```
 
 ## Enviroment variables
