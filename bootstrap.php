@@ -47,7 +47,7 @@
 		list($controller, $action) = explode('@', $match['target']);
 
 		if (is_callable([$controller, $action])) {
-			call_user_func_array([$controller, $action], [$match['params']]);
+			call_user_func_array([$controller, $action], $match['params']);
 		} else {
 			// Routes are wrong.
 			// Throw an exception in debug, send a 500 error in production
