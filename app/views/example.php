@@ -50,7 +50,6 @@
 			margin-top: 0;
 			color: transparent;
 			text-shadow: -2px -2px 0 #FF009970, 2px 2px 0 #3023AE30;
-			transition: all 0.4s ease;
 		}
 
 		.box > ul {
