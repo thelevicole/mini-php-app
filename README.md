@@ -21,7 +21,7 @@ php -S localhost:8000 -t public
 
 ## Routing
 
-The [AltoRouter]((http://altorouter.com/) package is used to handle all application routing. The routes file can be found in `app/routes.php`.
+The [AltoRouter](http://altorouter.com/) package is used to handle all application routing. The routes file can be found in `app/routes.php`.
 
 You can handle the request by calling a function directly, for example:
 ```php
