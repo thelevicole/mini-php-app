@@ -39,6 +39,15 @@ To reference nested views you can do this with "dot" notation. For example, if y
 view('admin.profile', [ 'name' => 'John Doe' ])
 ```
 
+## PHP constants
+
+```php
+	$root	= ROOT_DIR;		# /
+	$public	= PUBLIC_DIR;	# /public
+	$app	= APP_DIR;		# /app
+	$views	= VIEW_DIR;		# /app/views
+```
+
 ## Enviroment variables
 
 Using the [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv) package we load environment variables from `.env`.

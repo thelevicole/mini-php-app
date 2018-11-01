@@ -1,6 +1,13 @@
 <?php
 	require_once __DIR__.'/vendor/autoload.php';
 
+	/* Definitions
+	-------------------------------------------------------- */
+	if (!defined('ROOT_DIR') && !ROOT_DIR) define('ROOT_DIR', __DIR__);
+	if (!defined('PUBLIC_DIR') && !PUBLIC_DIR) define('PUBLIC_DIR', ROOT_DIR.'/public');
+	if (!defined('APP_DIR') && !APP_DIR) define('APP_DIR', ROOT_DIR.'/app');
+	if (!defined('VIEW_DIR') && !VIEW_DIR) define('VIEW_DIR', APP_DIR.'/views');
+
 	/* Load enviroment variables
 	-------------------------------------------------------- */
 	$dotenv = new Dotenv\Dotenv( __DIR__ );
@@ -20,7 +27,7 @@
 	if (is_readable($routes_files)) {
 		require_once $routes_files;
 	}
-	
+
 	$match = $router->match();
 
 	// Mtach routes else throw 404
