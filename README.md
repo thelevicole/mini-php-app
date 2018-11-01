@@ -1,7 +1,4 @@
-
 # Mini PHP application boilerplate
-
-⚠️ Work in progress ⚠️
 
 A basic starting point for a small PHP application. Currently no database support.
 
