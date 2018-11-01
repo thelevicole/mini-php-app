@@ -30,13 +30,22 @@
 
 	$match = $router->match();
 
-	// Mtach routes else throw 404
+	// If no match throw 404
 	if (!$match) {
 		header($_SERVER['SERVER_PROTOCOL'].' 404 Not Found');
-	} else if (is_callable($match['target'])) {
+		exit;
+	}
+
+	// Else check if target is a function
+	else if (is_callable($match['target'])) {
 		call_user_func_array($match['target'], $match['params']);
-	} else {
-		list($controller, $action) = explode('#', $match['target']);
+	}
+
+	// If target is not a callable, treat it as a class name with method
+	else {
+
+		list($controller, $action) = explode('@', $match['target']);
+
 		if (is_callable([$controller, $action])) {
 			call_user_func_array([$controller, $action], [$match['params']]);
 		} else {

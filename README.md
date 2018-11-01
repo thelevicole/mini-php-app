@@ -21,9 +21,19 @@ php -S localhost:8000 -t public
 
 ## Routing
 
-The AltoRouter package is used to handle all application routing. The routes file can be found in `app/routes.php`.
+The [AltoRouter]((http://altorouter.com/) package is used to handle all application routing. The routes file can be found in `app/routes.php`.
 
-For documentation visit [altorouter.com](http://altorouter.com/usage/mapping-routes.html)
+You can handle the request by calling a function directly, for example:
+```php
+	$router->map('GET', '/users/[i:id]', function($id) {
+		// Do something with $id
+	});
+```
+
+Or you can use a controller method:
+```php
+	$router->map('GET', '/users/[i:id]', 'ControllerName@method_name');
+```
 
 ## View helper function
 
@@ -36,7 +46,7 @@ The first argument corresponds to the name of the view file in the `app/views` d
 To reference nested views you can do this with "dot" notation. For example, if your view is stored at `app/views/admin/profile.php`, you can reference it like bellow.
 
 ```php
-view('admin.profile', [ 'name' => 'John Doe' ])
+view('admin.profile', [ 'name' => 'John Doe' ]);
 ```
 
 ## PHP constants
