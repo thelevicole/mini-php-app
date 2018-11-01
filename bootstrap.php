@@ -3,10 +3,10 @@
 
 	/* Definitions
 	-------------------------------------------------------- */
-	if (!defined('ROOT_DIR') && !ROOT_DIR) define('ROOT_DIR', __DIR__);
-	if (!defined('PUBLIC_DIR') && !PUBLIC_DIR) define('PUBLIC_DIR', ROOT_DIR.'/public');
-	if (!defined('APP_DIR') && !APP_DIR) define('APP_DIR', ROOT_DIR.'/app');
-	if (!defined('VIEW_DIR') && !VIEW_DIR) define('VIEW_DIR', APP_DIR.'/views');
+	if (!defined('ROOT_DIR') || !ROOT_DIR) define('ROOT_DIR', __DIR__);
+	if (!defined('PUBLIC_DIR') || !PUBLIC_DIR) define('PUBLIC_DIR', ROOT_DIR.'/public');
+	if (!defined('APP_DIR') || !APP_DIR) define('APP_DIR', ROOT_DIR.'/app');
+	if (!defined('VIEW_DIR') || !VIEW_DIR) define('VIEW_DIR', APP_DIR.'/views');
 
 	/* Load enviroment variables
 	-------------------------------------------------------- */
