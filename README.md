@@ -1,15 +1,22 @@
+
 # Mini PHP application boilerplate
 
 ⚠️ Work in progress ⚠️
 
-A basic starting point for a small PHP application.
+A basic starting point for a small PHP application. Currently no database support.
 
 ## Quick start
 
+Clone and install dependancies
 ```bash
 git clone git@github.com:thelevicole/mini-php-application-boilerplate.git
 cd mini-php-application-boilerplate
 composer install
+```
+### Serve
+Local serve from project directory
+```bash
+php -S localhost:8000 -t public
 ```
 
 ## Routing
@@ -17,6 +24,20 @@ composer install
 The AltoRouter package is used to handle all application routing. The routes file can be found in `app/routes.php`.
 
 For documentation visit [altorouter.com](http://altorouter.com/usage/mapping-routes.html)
+
+## View helper function
+
+```php
+view('profile', [ 'name' => 'John Doe' ]);
+```
+
+The first argument corresponds to the name of the view file in the `app/views` directory. The second argument is an array of data that should be made available to the view. In this case, we are passing the name variable.
+
+To reference nested views you can do this with "dot" notation. For example, if your view is stored at `app/views/admin/profile.php`, you can reference it like bellow.
+
+```php
+view('admin.profile', [ 'name' => 'John Doe' ])
+```
 
 ## Enviroment variables
 

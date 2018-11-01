@@ -5,7 +5,12 @@ namespace App;
 class ExampleController {
 
 	public function index() {
-		echo 'Hello World';
+
+		$app_name = getenv('APP_NAME')
+
+		return view('example', [
+			'title' => $app_name
+		]);
 	}
 
 }
