@@ -12,10 +12,8 @@
 
 	/* Load enviroment variables
 	-------------------------------------------------------- */
-	if ( is_readable(ROOT_DIR.'/.env') ) {
-		$dotenv = new Dotenv\Dotenv( ROOT_DIR );
-		$dotenv->load();
-	}
+	$dotenv = new Dotenv\Dotenv( ROOT_DIR );
+	$dotenv->safeLoad();
 
 	/* Include user functions
 	-------------------------------------------------------- */
