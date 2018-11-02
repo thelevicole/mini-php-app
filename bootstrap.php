@@ -1,6 +1,8 @@
 <?php
 	require_once __DIR__.'/vendor/autoload.php';
 
+	use Illuminate\Database\Capsule\Manager as Capsule;
+
 	/* Definitions
 	-------------------------------------------------------- */
 	foreach ([
@@ -14,6 +16,28 @@
 	-------------------------------------------------------- */
 	$dotenv = new Dotenv\Dotenv( ROOT_DIR );
 	$dotenv->safeLoad();
+
+	/* Initiate database connection
+	-------------------------------------------------------- */
+	$capsule = new Capsule;
+
+	$capsule->addConnection([
+		'driver'	=> getenv('DB_CONNECTION') ?: 'mysql',
+		'host'		=> getenv('DB_HOST') ?: 'localhost',
+		'database'	=> getenv('DB_DATABASE') ?: 'database',
+		'username'	=> getenv('DB_USERNAME') ?: 'root',
+		'password'	=> getenv('DB_PASSWORD') ?: 'password',
+		'charset'	=> 'utf8',
+		'collation'	=> 'utf8_unicode_ci',
+		'prefix'	=> getenv('DB_PREFIX') ?: '',
+	]);
+
+
+	// Make this Capsule instance available globally via static methods
+	$capsule->setAsGlobal();
+
+	// Setup the Eloquent ORM
+	$capsule->bootEloquent();
 
 	/* Include user functions
 	-------------------------------------------------------- */
@@ -48,10 +72,13 @@
 
 		list($controller, $action) = explode('@', $match['target']);
 
+		// Set controller base namespace
+		$controller = "App\\Controllers\\${controller}";
+
 		if ( is_callable([$controller, $action]) ) {
-			call_user_func_array([$controller, $action], $match['params']);
+			$class = new $controller;
+			$class->$action($match['params']);
 		} else {
-			// Routes are wrong.
-			// Throw an exception in debug, send a 500 error in production
+			throw new Exception("Route matched but handling function cannot be found. ${controller}::${action}()");
 		}
 	}

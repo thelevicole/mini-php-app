@@ -1,12 +1,13 @@
 {
     "require": {
         "vlucas/phpdotenv": "^2.5",
-        "altorouter/altorouter": "^1.2"
+        "altorouter/altorouter": "^1.2",
+        "illuminate/database": "^5.7"
     },
     "require-dev": {},
     "autoload": {
         "psr-4": {
-            "App\\": "app/controllers/"
+            "App\\": "app"
         }
     }
 }

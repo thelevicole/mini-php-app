@@ -1,3 +1,3 @@
 <?php
 
-	$router->map('GET', '/', 'App\ExampleController@index');
+	$router->map('GET', '/', 'ExampleController@index');
