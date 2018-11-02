@@ -16,6 +16,15 @@ Local serve from project directory
 php -S localhost:8000 -t public
 ```
 
+### Clone enviroment file
+The below comamnd will copy the `.env.example` file to `.env`. Here you can add variables specific to the enviroment. E.g. API keys, database passswords..etc
+```bash
+cp .env.example .env
+```
+
+### Setup video
+[► Watch on YouTube](https://www.youtube.com/watch?v=9TOB4kaViPw)
+
 ## Routing
 
 The [AltoRouter](http://altorouter.com/) package is used to handle all application routing. The routes file can be found in `app/routes.php`.
