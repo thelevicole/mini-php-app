@@ -6,7 +6,7 @@ A basic starting point for a small PHP application. Currently no database suppor
 
 Clone and install dependancies
 ```bash
-git clone git@github.com:thelevicole/mini-php-application-boilerplate.git
+git clone https://github.com/thelevicole/mini-php-application-boilerplate.git
 cd mini-php-application-boilerplate
 composer install
 ```
