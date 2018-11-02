@@ -1,6 +1,7 @@
-# Mini PHP application boilerplate
 
-A basic starting point for a small PHP application. Currently no database support.
+# Mini PHP MVC application boilerplate
+
+A basic starting point for a small PHP application. Now supporting database connections.
 
 ## Quick start
 
@@ -11,7 +12,7 @@ cd mini-php-application-boilerplate
 composer install
 ```
 ### Serve
-Local serve from project directory
+Local serve from project directory without local database.
 ```bash
 php -S localhost:8000 -t public
 ```
@@ -40,6 +41,44 @@ Or you can use a controller method:
 ```php
 $router->map('GET', '/users/[i:id]', 'ControllerName@method_name');
 ```
+
+## Models
+Making use of the [illuminate/database](https://github.com/illuminate/database) component shipped with Laravel.
+
+### Creating a model
+A models folder has already been created to keep things organised (`/app/Models`), but a model class can essentially be put anywhere within the `app` folder.
+
+For example, say you have you have a `users` table and you want to find a "user" by their `username`.
+
+First create a model for the users table:
+```php
+# /app/Models/User.php
+<?php
+namespace App\Models;
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model {
+	// Model logic here...
+}
+```
+Eloquent will guess the table from the class name. If you want to specify a table add the $table property to your model: `protected $table = 'users_table';`
+
+Now, for example, you can access your model from a controller:
+```php
+# /app/Controller/ExampleController.php
+<?php
+namespace App\Controllers;
+use App\Models\User;
+
+class ExampleController {
+	public function profile() {
+		$john = User::where('username', 'johndoe')->first();
+	}
+}
+```
+
+For further documentation on using the various database facilities this library provides, consult the [Laravel framework documentation](https://laravel.com/docs).
+
 
 ## View helper function
 
