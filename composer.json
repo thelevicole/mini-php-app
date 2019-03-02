@@ -1,4 +1,15 @@
 {
+    "name": "thelevicole/mini-php-app",
+    "description": "A basic starting point for a small PHP application.",
+    "homepage": "https://github.com/thelevicole/mini-php-application-boilerplate",
+    "authors": [
+        {
+            "name": "Levi Cole",
+            "email": "dev@thelevicole.com",
+            "homepage": "https://thelevicole.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "vlucas/phpdotenv": "^2.5",
         "altorouter/altorouter": "^1.2"
