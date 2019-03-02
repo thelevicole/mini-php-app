@@ -32,5 +32,5 @@
 
 		extract($vars);
 
-		require_once VIEW_DIR.$_resolve_path;
+		require_once VIEW_DIR.'/'.$_resolve_path;
 	}
