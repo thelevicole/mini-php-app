@@ -1,3 +1,4 @@
+
 # Mini PHP application boilerplate
 
 A basic starting point for a small PHP application. Currently no database support.
@@ -22,7 +23,15 @@ The below comamnd will copy the `.env.example` file to `.env`. Here you can add 
 cp .env.example .env
 ```
 
-### Setup video (outdated)
+### Gulp
+A basic `gulpfile.js` is included by default which will process stylesheets and javascript files to the public directory. Use `gulp watch` to process files on change.
+```bash
+npm install
+gulp
+```
+By default all javascript files found in `/resources/js/**/*.js` will be concatenated and minified into `/public/js/app.js`. The same goes for sass files, `/resources/sass/**/*.scss` --> `/public/css/app.css`
+
+### Setup video *(outdated)*
 [► Watch on YouTube](https://www.youtube.com/watch?v=9TOB4kaViPw)
 
 ## Routing
