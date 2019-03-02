@@ -6,8 +6,8 @@ A basic starting point for a small PHP application. Currently no database suppor
 
 Clone and install dependancies
 ```bash
-git clone https://github.com/thelevicole/mini-php-application-boilerplate.git
-cd mini-php-application-boilerplate
+git clone https://github.com/thelevicole/mini-php-app.git
+cd mini-php-app
 composer install
 ```
 ### Serve
@@ -22,7 +22,7 @@ The below comamnd will copy the `.env.example` file to `.env`. Here you can add 
 cp .env.example .env
 ```
 
-### Setup video
+### Setup video (outdated)
 [► Watch on YouTube](https://www.youtube.com/watch?v=9TOB4kaViPw)
 
 ## Routing
