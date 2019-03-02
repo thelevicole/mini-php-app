@@ -45,13 +45,15 @@ $router->map('GET', '/users/[i:id]', 'ControllerName@method_name');
 ## Models
 Making use of the [illuminate/database](https://github.com/illuminate/database) component shipped with Laravel.
 
+### Creating a model
 A models folder has already been created to keep things organised (`/app/Models`), but a model class can essentially be put anywhere within the `app` folder.
 
 For example, say you have you have a `users` table and you want to find a "user" by their `username`.
 
 First create a model for the users table:
-**/app/Models/User.php**
 ```php
+# /app/Models/User.php
+<?php
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
@@ -62,8 +64,9 @@ class User extends Model {
 Eloquent will guess the table from the class name. If you want to specify a table add the $table property to your model: `protected $table = 'users_table';`
 
 Now, for example, you can access your model from a controller:
-**/app/Controllers/ExampleController.php**
 ```php
+# /app/Controller/ExampleController.php
+<?php
 namespace App\Controllers;
 use App\Models\User;
 
