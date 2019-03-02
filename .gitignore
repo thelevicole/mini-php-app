@@ -8,5 +8,6 @@ npm-debug.log
 error_log
 .DS_Store
 composer.lock
+package-lock.json
 /public/css
 /public/js
