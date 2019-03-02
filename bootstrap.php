@@ -7,7 +7,7 @@
 		'ROOT_DIR'		=> __DIR__,
 		'PUBLIC_DIR'	=> __DIR__.'/public',
 		'APP_DIR'		=> __DIR__.'/app',
-		'VIEW_DIR'		=> __DIR__.'/app/views'
+		'VIEW_DIR'		=> __DIR__.'/resources/views'
 	] as $key => $value) { define($key, $value); }
 
 	/* Load enviroment variables
