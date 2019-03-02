@@ -74,8 +74,8 @@
 	<div class="box">
 		<h1><?= $title; ?></h1>
 		<ul>
-			<li><a href="https://github.com/thelevicole/mini-php-application-boilerplate" target="_blank">GitHub</a></li>
-			<li><a href="https://github.com/thelevicole/mini-php-application-boilerplate/blob/master/README.md" target="_blank">Documentation</a></li>
+			<li><a href="https://github.com/thelevicole/mini-php-app" target="_blank">GitHub</a></li>
+			<li><a href="https://github.com/thelevicole/mini-php-app/blob/master/README.md" target="_blank">Documentation</a></li>
 			<li><a href="https://thelevicole.com" target="_blank">Author</a></li>
 		</ul>
 	</div>
